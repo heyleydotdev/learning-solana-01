@@ -7,7 +7,6 @@ import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
   PhantomWalletAdapter,
   SolflareWalletAdapter,
-  WalletConnectWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -21,10 +20,7 @@ export default function Providers({ children }: React.PropsWithChildren) {
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
   const wallets = useMemo(
-    () => [
-      new PhantomWalletAdapter({ network }),
-      new SolflareWalletAdapter({ network }),
-    ],
+    () => [new SolflareWalletAdapter({ network })],
     [network],
   );
 

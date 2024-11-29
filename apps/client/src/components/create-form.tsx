@@ -1,9 +1,9 @@
 import { useWallet } from "@solana/wallet-adapter-react";
+import { Keypair } from "@solana/web3.js";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { z } from "zod";
 import { useAnchorProgram } from "../hooks/use-anchor";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Keypair, PublicKey } from "@solana/web3.js";
 
 export default function CreateForm() {
   const { publicKey } = useWallet();
@@ -17,6 +17,7 @@ export default function CreateForm() {
 
 function CreateFormInner() {
   const qClient = useQueryClient();
+  const wallet = useWallet();
   const program = useAnchorProgram();
 
   const [fieldError, setFieldError] = useState<string | null>(null);
