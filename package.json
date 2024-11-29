@@ -5,7 +5,8 @@
     "build": "turbo build",
     "build:rust": "turbo build --filter=@lsone/contract",
     "dev": "turbo dev",
-    "test": "turbo test"
+    "test": "turbo test",
+    "deploy": "turbo deploy"
   },
   "devDependencies": {
     "prettier": "^3.2.5",

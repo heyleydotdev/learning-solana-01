@@ -18,6 +18,9 @@
     },
     "test": {
       "cache": true
+    },
+    "deploy": {
+      "cache": false
     }
   }
 }

@@ -13,7 +13,8 @@ describe("contract", () => {
   const user = wallet.payer;
 
   const id = anchor.web3.Keypair.generate().publicKey;
-  const content = "first todo";
+  const content =
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry";
 
   const [todoEntry] = anchor.web3.PublicKey.findProgramAddressSync(
     [Buffer.from("todo_seeds"), id.toBuffer(), user.publicKey.toBuffer()],

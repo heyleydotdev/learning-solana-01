@@ -65,7 +65,7 @@ pub struct DeleteToDoEntry<'info> {
 pub struct ToDoState {
     pub id: Pubkey,
     pub user: Pubkey,
-    #[max_len(20)]
+    #[max_len(255)]
     pub content: String
 }
 

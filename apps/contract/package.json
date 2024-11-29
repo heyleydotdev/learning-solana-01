@@ -3,9 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "license": "ISC",
+  "exports": {
+    "./idl": {
+      "default": "./target/idl/contract.json"
+    },
+    "./types": {
+      "default": "./target/types/contract.ts"
+    }
+  },
   "scripts": {
     "build": "anchor build",
-    "deploy": "anchor deploy",
+    "deploy": "anchor deploy --provider.cluster=Devnet",
     "test": "anchor test"
   },
   "dependencies": {

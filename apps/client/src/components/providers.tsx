@@ -10,7 +10,10 @@ import {
   WalletConnectWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useMemo } from "react";
+
+const queryClient = new QueryClient();
 
 export default function Providers({ children }: React.PropsWithChildren) {
   const network = WalletAdapterNetwork.Devnet;
@@ -26,10 +29,12 @@ export default function Providers({ children }: React.PropsWithChildren) {
   );
 
   return (
-    <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider wallets={wallets} autoConnect>
-        <WalletModalProvider>{children}</WalletModalProvider>
-      </WalletProvider>
-    </ConnectionProvider>
+    <QueryClientProvider client={queryClient}>
+      <ConnectionProvider endpoint={endpoint}>
+        <WalletProvider wallets={wallets} autoConnect>
+          <WalletModalProvider>{children}</WalletModalProvider>
+        </WalletProvider>
+      </ConnectionProvider>
+    </QueryClientProvider>
   );
 }
