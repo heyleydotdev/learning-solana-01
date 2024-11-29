@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "build:rust": "turbo build --filter=@lsone/contract",
     "dev": "turbo dev",
     "test": "turbo test"
   },
