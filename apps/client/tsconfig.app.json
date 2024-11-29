@@ -1,0 +1,9 @@
+{
+  "extends": "@lsone/tsconfig/base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "jsx": "react-jsx"
+  },
+  "include": ["src"]
+}

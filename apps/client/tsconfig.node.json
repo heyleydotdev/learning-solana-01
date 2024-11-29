@@ -1,0 +1,7 @@
+{
+  "extends": "@lsone/tsconfig/base.json",
+  "compilerOptions": {
+    "module": "ESNext"
+  },
+  "include": ["vite.config.ts"]
+}
